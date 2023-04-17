@@ -229,6 +229,139 @@ func (o TalosClusterKubeconfigKubernetesClientConfigurationOutput) Host() pulumi
 	return o.ApplyT(func(v TalosClusterKubeconfigKubernetesClientConfiguration) string { return v.Host }).(pulumi.StringOutput)
 }
 
+type TalosClusterKubeconfigTimeouts struct {
+	Read *string `pulumi:"read"`
+}
+
+// TalosClusterKubeconfigTimeoutsInput is an input type that accepts TalosClusterKubeconfigTimeoutsArgs and TalosClusterKubeconfigTimeoutsOutput values.
+// You can construct a concrete instance of `TalosClusterKubeconfigTimeoutsInput` via:
+//
+//	TalosClusterKubeconfigTimeoutsArgs{...}
+type TalosClusterKubeconfigTimeoutsInput interface {
+	pulumi.Input
+
+	ToTalosClusterKubeconfigTimeoutsOutput() TalosClusterKubeconfigTimeoutsOutput
+	ToTalosClusterKubeconfigTimeoutsOutputWithContext(context.Context) TalosClusterKubeconfigTimeoutsOutput
+}
+
+type TalosClusterKubeconfigTimeoutsArgs struct {
+	Read pulumi.StringPtrInput `pulumi:"read"`
+}
+
+func (TalosClusterKubeconfigTimeoutsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosClusterKubeconfigTimeouts)(nil)).Elem()
+}
+
+func (i TalosClusterKubeconfigTimeoutsArgs) ToTalosClusterKubeconfigTimeoutsOutput() TalosClusterKubeconfigTimeoutsOutput {
+	return i.ToTalosClusterKubeconfigTimeoutsOutputWithContext(context.Background())
+}
+
+func (i TalosClusterKubeconfigTimeoutsArgs) ToTalosClusterKubeconfigTimeoutsOutputWithContext(ctx context.Context) TalosClusterKubeconfigTimeoutsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosClusterKubeconfigTimeoutsOutput)
+}
+
+func (i TalosClusterKubeconfigTimeoutsArgs) ToTalosClusterKubeconfigTimeoutsPtrOutput() TalosClusterKubeconfigTimeoutsPtrOutput {
+	return i.ToTalosClusterKubeconfigTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i TalosClusterKubeconfigTimeoutsArgs) ToTalosClusterKubeconfigTimeoutsPtrOutputWithContext(ctx context.Context) TalosClusterKubeconfigTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosClusterKubeconfigTimeoutsOutput).ToTalosClusterKubeconfigTimeoutsPtrOutputWithContext(ctx)
+}
+
+// TalosClusterKubeconfigTimeoutsPtrInput is an input type that accepts TalosClusterKubeconfigTimeoutsArgs, TalosClusterKubeconfigTimeoutsPtr and TalosClusterKubeconfigTimeoutsPtrOutput values.
+// You can construct a concrete instance of `TalosClusterKubeconfigTimeoutsPtrInput` via:
+//
+//	        TalosClusterKubeconfigTimeoutsArgs{...}
+//
+//	or:
+//
+//	        nil
+type TalosClusterKubeconfigTimeoutsPtrInput interface {
+	pulumi.Input
+
+	ToTalosClusterKubeconfigTimeoutsPtrOutput() TalosClusterKubeconfigTimeoutsPtrOutput
+	ToTalosClusterKubeconfigTimeoutsPtrOutputWithContext(context.Context) TalosClusterKubeconfigTimeoutsPtrOutput
+}
+
+type talosClusterKubeconfigTimeoutsPtrType TalosClusterKubeconfigTimeoutsArgs
+
+func TalosClusterKubeconfigTimeoutsPtr(v *TalosClusterKubeconfigTimeoutsArgs) TalosClusterKubeconfigTimeoutsPtrInput {
+	return (*talosClusterKubeconfigTimeoutsPtrType)(v)
+}
+
+func (*talosClusterKubeconfigTimeoutsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TalosClusterKubeconfigTimeouts)(nil)).Elem()
+}
+
+func (i *talosClusterKubeconfigTimeoutsPtrType) ToTalosClusterKubeconfigTimeoutsPtrOutput() TalosClusterKubeconfigTimeoutsPtrOutput {
+	return i.ToTalosClusterKubeconfigTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i *talosClusterKubeconfigTimeoutsPtrType) ToTalosClusterKubeconfigTimeoutsPtrOutputWithContext(ctx context.Context) TalosClusterKubeconfigTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosClusterKubeconfigTimeoutsPtrOutput)
+}
+
+type TalosClusterKubeconfigTimeoutsOutput struct{ *pulumi.OutputState }
+
+func (TalosClusterKubeconfigTimeoutsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosClusterKubeconfigTimeouts)(nil)).Elem()
+}
+
+func (o TalosClusterKubeconfigTimeoutsOutput) ToTalosClusterKubeconfigTimeoutsOutput() TalosClusterKubeconfigTimeoutsOutput {
+	return o
+}
+
+func (o TalosClusterKubeconfigTimeoutsOutput) ToTalosClusterKubeconfigTimeoutsOutputWithContext(ctx context.Context) TalosClusterKubeconfigTimeoutsOutput {
+	return o
+}
+
+func (o TalosClusterKubeconfigTimeoutsOutput) ToTalosClusterKubeconfigTimeoutsPtrOutput() TalosClusterKubeconfigTimeoutsPtrOutput {
+	return o.ToTalosClusterKubeconfigTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (o TalosClusterKubeconfigTimeoutsOutput) ToTalosClusterKubeconfigTimeoutsPtrOutputWithContext(ctx context.Context) TalosClusterKubeconfigTimeoutsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TalosClusterKubeconfigTimeouts) *TalosClusterKubeconfigTimeouts {
+		return &v
+	}).(TalosClusterKubeconfigTimeoutsPtrOutput)
+}
+
+func (o TalosClusterKubeconfigTimeoutsOutput) Read() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosClusterKubeconfigTimeouts) *string { return v.Read }).(pulumi.StringPtrOutput)
+}
+
+type TalosClusterKubeconfigTimeoutsPtrOutput struct{ *pulumi.OutputState }
+
+func (TalosClusterKubeconfigTimeoutsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TalosClusterKubeconfigTimeouts)(nil)).Elem()
+}
+
+func (o TalosClusterKubeconfigTimeoutsPtrOutput) ToTalosClusterKubeconfigTimeoutsPtrOutput() TalosClusterKubeconfigTimeoutsPtrOutput {
+	return o
+}
+
+func (o TalosClusterKubeconfigTimeoutsPtrOutput) ToTalosClusterKubeconfigTimeoutsPtrOutputWithContext(ctx context.Context) TalosClusterKubeconfigTimeoutsPtrOutput {
+	return o
+}
+
+func (o TalosClusterKubeconfigTimeoutsPtrOutput) Elem() TalosClusterKubeconfigTimeoutsOutput {
+	return o.ApplyT(func(v *TalosClusterKubeconfigTimeouts) TalosClusterKubeconfigTimeouts {
+		if v != nil {
+			return *v
+		}
+		var ret TalosClusterKubeconfigTimeouts
+		return ret
+	}).(TalosClusterKubeconfigTimeoutsOutput)
+}
+
+func (o TalosClusterKubeconfigTimeoutsPtrOutput) Read() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosClusterKubeconfigTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Read
+	}).(pulumi.StringPtrOutput)
+}
+
 type TalosMachineBootstrapClientConfiguration struct {
 	// The client CA certificate
 	CaCertificate string `pulumi:"caCertificate"`
@@ -404,6 +537,139 @@ func (o TalosMachineBootstrapClientConfigurationPtrOutput) ClientKey() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
+type TalosMachineBootstrapTimeouts struct {
+	Create *string `pulumi:"create"`
+}
+
+// TalosMachineBootstrapTimeoutsInput is an input type that accepts TalosMachineBootstrapTimeoutsArgs and TalosMachineBootstrapTimeoutsOutput values.
+// You can construct a concrete instance of `TalosMachineBootstrapTimeoutsInput` via:
+//
+//	TalosMachineBootstrapTimeoutsArgs{...}
+type TalosMachineBootstrapTimeoutsInput interface {
+	pulumi.Input
+
+	ToTalosMachineBootstrapTimeoutsOutput() TalosMachineBootstrapTimeoutsOutput
+	ToTalosMachineBootstrapTimeoutsOutputWithContext(context.Context) TalosMachineBootstrapTimeoutsOutput
+}
+
+type TalosMachineBootstrapTimeoutsArgs struct {
+	Create pulumi.StringPtrInput `pulumi:"create"`
+}
+
+func (TalosMachineBootstrapTimeoutsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineBootstrapTimeouts)(nil)).Elem()
+}
+
+func (i TalosMachineBootstrapTimeoutsArgs) ToTalosMachineBootstrapTimeoutsOutput() TalosMachineBootstrapTimeoutsOutput {
+	return i.ToTalosMachineBootstrapTimeoutsOutputWithContext(context.Background())
+}
+
+func (i TalosMachineBootstrapTimeoutsArgs) ToTalosMachineBootstrapTimeoutsOutputWithContext(ctx context.Context) TalosMachineBootstrapTimeoutsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineBootstrapTimeoutsOutput)
+}
+
+func (i TalosMachineBootstrapTimeoutsArgs) ToTalosMachineBootstrapTimeoutsPtrOutput() TalosMachineBootstrapTimeoutsPtrOutput {
+	return i.ToTalosMachineBootstrapTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i TalosMachineBootstrapTimeoutsArgs) ToTalosMachineBootstrapTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineBootstrapTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineBootstrapTimeoutsOutput).ToTalosMachineBootstrapTimeoutsPtrOutputWithContext(ctx)
+}
+
+// TalosMachineBootstrapTimeoutsPtrInput is an input type that accepts TalosMachineBootstrapTimeoutsArgs, TalosMachineBootstrapTimeoutsPtr and TalosMachineBootstrapTimeoutsPtrOutput values.
+// You can construct a concrete instance of `TalosMachineBootstrapTimeoutsPtrInput` via:
+//
+//	        TalosMachineBootstrapTimeoutsArgs{...}
+//
+//	or:
+//
+//	        nil
+type TalosMachineBootstrapTimeoutsPtrInput interface {
+	pulumi.Input
+
+	ToTalosMachineBootstrapTimeoutsPtrOutput() TalosMachineBootstrapTimeoutsPtrOutput
+	ToTalosMachineBootstrapTimeoutsPtrOutputWithContext(context.Context) TalosMachineBootstrapTimeoutsPtrOutput
+}
+
+type talosMachineBootstrapTimeoutsPtrType TalosMachineBootstrapTimeoutsArgs
+
+func TalosMachineBootstrapTimeoutsPtr(v *TalosMachineBootstrapTimeoutsArgs) TalosMachineBootstrapTimeoutsPtrInput {
+	return (*talosMachineBootstrapTimeoutsPtrType)(v)
+}
+
+func (*talosMachineBootstrapTimeoutsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TalosMachineBootstrapTimeouts)(nil)).Elem()
+}
+
+func (i *talosMachineBootstrapTimeoutsPtrType) ToTalosMachineBootstrapTimeoutsPtrOutput() TalosMachineBootstrapTimeoutsPtrOutput {
+	return i.ToTalosMachineBootstrapTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i *talosMachineBootstrapTimeoutsPtrType) ToTalosMachineBootstrapTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineBootstrapTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineBootstrapTimeoutsPtrOutput)
+}
+
+type TalosMachineBootstrapTimeoutsOutput struct{ *pulumi.OutputState }
+
+func (TalosMachineBootstrapTimeoutsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineBootstrapTimeouts)(nil)).Elem()
+}
+
+func (o TalosMachineBootstrapTimeoutsOutput) ToTalosMachineBootstrapTimeoutsOutput() TalosMachineBootstrapTimeoutsOutput {
+	return o
+}
+
+func (o TalosMachineBootstrapTimeoutsOutput) ToTalosMachineBootstrapTimeoutsOutputWithContext(ctx context.Context) TalosMachineBootstrapTimeoutsOutput {
+	return o
+}
+
+func (o TalosMachineBootstrapTimeoutsOutput) ToTalosMachineBootstrapTimeoutsPtrOutput() TalosMachineBootstrapTimeoutsPtrOutput {
+	return o.ToTalosMachineBootstrapTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (o TalosMachineBootstrapTimeoutsOutput) ToTalosMachineBootstrapTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineBootstrapTimeoutsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TalosMachineBootstrapTimeouts) *TalosMachineBootstrapTimeouts {
+		return &v
+	}).(TalosMachineBootstrapTimeoutsPtrOutput)
+}
+
+func (o TalosMachineBootstrapTimeoutsOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineBootstrapTimeouts) *string { return v.Create }).(pulumi.StringPtrOutput)
+}
+
+type TalosMachineBootstrapTimeoutsPtrOutput struct{ *pulumi.OutputState }
+
+func (TalosMachineBootstrapTimeoutsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TalosMachineBootstrapTimeouts)(nil)).Elem()
+}
+
+func (o TalosMachineBootstrapTimeoutsPtrOutput) ToTalosMachineBootstrapTimeoutsPtrOutput() TalosMachineBootstrapTimeoutsPtrOutput {
+	return o
+}
+
+func (o TalosMachineBootstrapTimeoutsPtrOutput) ToTalosMachineBootstrapTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineBootstrapTimeoutsPtrOutput {
+	return o
+}
+
+func (o TalosMachineBootstrapTimeoutsPtrOutput) Elem() TalosMachineBootstrapTimeoutsOutput {
+	return o.ApplyT(func(v *TalosMachineBootstrapTimeouts) TalosMachineBootstrapTimeouts {
+		if v != nil {
+			return *v
+		}
+		var ret TalosMachineBootstrapTimeouts
+		return ret
+	}).(TalosMachineBootstrapTimeoutsOutput)
+}
+
+func (o TalosMachineBootstrapTimeoutsPtrOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineBootstrapTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Create
+	}).(pulumi.StringPtrOutput)
+}
+
 type TalosMachineConfigurationApplyClientConfiguration struct {
 	// The client CA certificate
 	CaCertificate string `pulumi:"caCertificate"`
@@ -576,6 +842,154 @@ func (o TalosMachineConfigurationApplyClientConfigurationPtrOutput) ClientKey() 
 			return nil
 		}
 		return &v.ClientKey
+	}).(pulumi.StringPtrOutput)
+}
+
+type TalosMachineConfigurationApplyTimeouts struct {
+	Create *string `pulumi:"create"`
+	Update *string `pulumi:"update"`
+}
+
+// TalosMachineConfigurationApplyTimeoutsInput is an input type that accepts TalosMachineConfigurationApplyTimeoutsArgs and TalosMachineConfigurationApplyTimeoutsOutput values.
+// You can construct a concrete instance of `TalosMachineConfigurationApplyTimeoutsInput` via:
+//
+//	TalosMachineConfigurationApplyTimeoutsArgs{...}
+type TalosMachineConfigurationApplyTimeoutsInput interface {
+	pulumi.Input
+
+	ToTalosMachineConfigurationApplyTimeoutsOutput() TalosMachineConfigurationApplyTimeoutsOutput
+	ToTalosMachineConfigurationApplyTimeoutsOutputWithContext(context.Context) TalosMachineConfigurationApplyTimeoutsOutput
+}
+
+type TalosMachineConfigurationApplyTimeoutsArgs struct {
+	Create pulumi.StringPtrInput `pulumi:"create"`
+	Update pulumi.StringPtrInput `pulumi:"update"`
+}
+
+func (TalosMachineConfigurationApplyTimeoutsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineConfigurationApplyTimeouts)(nil)).Elem()
+}
+
+func (i TalosMachineConfigurationApplyTimeoutsArgs) ToTalosMachineConfigurationApplyTimeoutsOutput() TalosMachineConfigurationApplyTimeoutsOutput {
+	return i.ToTalosMachineConfigurationApplyTimeoutsOutputWithContext(context.Background())
+}
+
+func (i TalosMachineConfigurationApplyTimeoutsArgs) ToTalosMachineConfigurationApplyTimeoutsOutputWithContext(ctx context.Context) TalosMachineConfigurationApplyTimeoutsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineConfigurationApplyTimeoutsOutput)
+}
+
+func (i TalosMachineConfigurationApplyTimeoutsArgs) ToTalosMachineConfigurationApplyTimeoutsPtrOutput() TalosMachineConfigurationApplyTimeoutsPtrOutput {
+	return i.ToTalosMachineConfigurationApplyTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i TalosMachineConfigurationApplyTimeoutsArgs) ToTalosMachineConfigurationApplyTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineConfigurationApplyTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineConfigurationApplyTimeoutsOutput).ToTalosMachineConfigurationApplyTimeoutsPtrOutputWithContext(ctx)
+}
+
+// TalosMachineConfigurationApplyTimeoutsPtrInput is an input type that accepts TalosMachineConfigurationApplyTimeoutsArgs, TalosMachineConfigurationApplyTimeoutsPtr and TalosMachineConfigurationApplyTimeoutsPtrOutput values.
+// You can construct a concrete instance of `TalosMachineConfigurationApplyTimeoutsPtrInput` via:
+//
+//	        TalosMachineConfigurationApplyTimeoutsArgs{...}
+//
+//	or:
+//
+//	        nil
+type TalosMachineConfigurationApplyTimeoutsPtrInput interface {
+	pulumi.Input
+
+	ToTalosMachineConfigurationApplyTimeoutsPtrOutput() TalosMachineConfigurationApplyTimeoutsPtrOutput
+	ToTalosMachineConfigurationApplyTimeoutsPtrOutputWithContext(context.Context) TalosMachineConfigurationApplyTimeoutsPtrOutput
+}
+
+type talosMachineConfigurationApplyTimeoutsPtrType TalosMachineConfigurationApplyTimeoutsArgs
+
+func TalosMachineConfigurationApplyTimeoutsPtr(v *TalosMachineConfigurationApplyTimeoutsArgs) TalosMachineConfigurationApplyTimeoutsPtrInput {
+	return (*talosMachineConfigurationApplyTimeoutsPtrType)(v)
+}
+
+func (*talosMachineConfigurationApplyTimeoutsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TalosMachineConfigurationApplyTimeouts)(nil)).Elem()
+}
+
+func (i *talosMachineConfigurationApplyTimeoutsPtrType) ToTalosMachineConfigurationApplyTimeoutsPtrOutput() TalosMachineConfigurationApplyTimeoutsPtrOutput {
+	return i.ToTalosMachineConfigurationApplyTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i *talosMachineConfigurationApplyTimeoutsPtrType) ToTalosMachineConfigurationApplyTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineConfigurationApplyTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineConfigurationApplyTimeoutsPtrOutput)
+}
+
+type TalosMachineConfigurationApplyTimeoutsOutput struct{ *pulumi.OutputState }
+
+func (TalosMachineConfigurationApplyTimeoutsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineConfigurationApplyTimeouts)(nil)).Elem()
+}
+
+func (o TalosMachineConfigurationApplyTimeoutsOutput) ToTalosMachineConfigurationApplyTimeoutsOutput() TalosMachineConfigurationApplyTimeoutsOutput {
+	return o
+}
+
+func (o TalosMachineConfigurationApplyTimeoutsOutput) ToTalosMachineConfigurationApplyTimeoutsOutputWithContext(ctx context.Context) TalosMachineConfigurationApplyTimeoutsOutput {
+	return o
+}
+
+func (o TalosMachineConfigurationApplyTimeoutsOutput) ToTalosMachineConfigurationApplyTimeoutsPtrOutput() TalosMachineConfigurationApplyTimeoutsPtrOutput {
+	return o.ToTalosMachineConfigurationApplyTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (o TalosMachineConfigurationApplyTimeoutsOutput) ToTalosMachineConfigurationApplyTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineConfigurationApplyTimeoutsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TalosMachineConfigurationApplyTimeouts) *TalosMachineConfigurationApplyTimeouts {
+		return &v
+	}).(TalosMachineConfigurationApplyTimeoutsPtrOutput)
+}
+
+func (o TalosMachineConfigurationApplyTimeoutsOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineConfigurationApplyTimeouts) *string { return v.Create }).(pulumi.StringPtrOutput)
+}
+
+func (o TalosMachineConfigurationApplyTimeoutsOutput) Update() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineConfigurationApplyTimeouts) *string { return v.Update }).(pulumi.StringPtrOutput)
+}
+
+type TalosMachineConfigurationApplyTimeoutsPtrOutput struct{ *pulumi.OutputState }
+
+func (TalosMachineConfigurationApplyTimeoutsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TalosMachineConfigurationApplyTimeouts)(nil)).Elem()
+}
+
+func (o TalosMachineConfigurationApplyTimeoutsPtrOutput) ToTalosMachineConfigurationApplyTimeoutsPtrOutput() TalosMachineConfigurationApplyTimeoutsPtrOutput {
+	return o
+}
+
+func (o TalosMachineConfigurationApplyTimeoutsPtrOutput) ToTalosMachineConfigurationApplyTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineConfigurationApplyTimeoutsPtrOutput {
+	return o
+}
+
+func (o TalosMachineConfigurationApplyTimeoutsPtrOutput) Elem() TalosMachineConfigurationApplyTimeoutsOutput {
+	return o.ApplyT(func(v *TalosMachineConfigurationApplyTimeouts) TalosMachineConfigurationApplyTimeouts {
+		if v != nil {
+			return *v
+		}
+		var ret TalosMachineConfigurationApplyTimeouts
+		return ret
+	}).(TalosMachineConfigurationApplyTimeoutsOutput)
+}
+
+func (o TalosMachineConfigurationApplyTimeoutsPtrOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineConfigurationApplyTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Create
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o TalosMachineConfigurationApplyTimeoutsPtrOutput) Update() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineConfigurationApplyTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Update
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -1184,6 +1598,667 @@ func (o TalosMachineConfigurationMachineSecretsTrustdinfoOutput) ToTalosMachineC
 
 func (o TalosMachineConfigurationMachineSecretsTrustdinfoOutput) Token() pulumi.StringOutput {
 	return o.ApplyT(func(v TalosMachineConfigurationMachineSecretsTrustdinfo) string { return v.Token }).(pulumi.StringOutput)
+}
+
+type TalosMachineDisksClientConfiguration struct {
+	// The client CA certificate
+	CaCertificate string `pulumi:"caCertificate"`
+	// The client certificate
+	ClientCertificate string `pulumi:"clientCertificate"`
+	// The client key
+	ClientKey string `pulumi:"clientKey"`
+}
+
+// TalosMachineDisksClientConfigurationInput is an input type that accepts TalosMachineDisksClientConfigurationArgs and TalosMachineDisksClientConfigurationOutput values.
+// You can construct a concrete instance of `TalosMachineDisksClientConfigurationInput` via:
+//
+//	TalosMachineDisksClientConfigurationArgs{...}
+type TalosMachineDisksClientConfigurationInput interface {
+	pulumi.Input
+
+	ToTalosMachineDisksClientConfigurationOutput() TalosMachineDisksClientConfigurationOutput
+	ToTalosMachineDisksClientConfigurationOutputWithContext(context.Context) TalosMachineDisksClientConfigurationOutput
+}
+
+type TalosMachineDisksClientConfigurationArgs struct {
+	// The client CA certificate
+	CaCertificate pulumi.StringInput `pulumi:"caCertificate"`
+	// The client certificate
+	ClientCertificate pulumi.StringInput `pulumi:"clientCertificate"`
+	// The client key
+	ClientKey pulumi.StringInput `pulumi:"clientKey"`
+}
+
+func (TalosMachineDisksClientConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineDisksClientConfiguration)(nil)).Elem()
+}
+
+func (i TalosMachineDisksClientConfigurationArgs) ToTalosMachineDisksClientConfigurationOutput() TalosMachineDisksClientConfigurationOutput {
+	return i.ToTalosMachineDisksClientConfigurationOutputWithContext(context.Background())
+}
+
+func (i TalosMachineDisksClientConfigurationArgs) ToTalosMachineDisksClientConfigurationOutputWithContext(ctx context.Context) TalosMachineDisksClientConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineDisksClientConfigurationOutput)
+}
+
+type TalosMachineDisksClientConfigurationOutput struct{ *pulumi.OutputState }
+
+func (TalosMachineDisksClientConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineDisksClientConfiguration)(nil)).Elem()
+}
+
+func (o TalosMachineDisksClientConfigurationOutput) ToTalosMachineDisksClientConfigurationOutput() TalosMachineDisksClientConfigurationOutput {
+	return o
+}
+
+func (o TalosMachineDisksClientConfigurationOutput) ToTalosMachineDisksClientConfigurationOutputWithContext(ctx context.Context) TalosMachineDisksClientConfigurationOutput {
+	return o
+}
+
+// The client CA certificate
+func (o TalosMachineDisksClientConfigurationOutput) CaCertificate() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksClientConfiguration) string { return v.CaCertificate }).(pulumi.StringOutput)
+}
+
+// The client certificate
+func (o TalosMachineDisksClientConfigurationOutput) ClientCertificate() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksClientConfiguration) string { return v.ClientCertificate }).(pulumi.StringOutput)
+}
+
+// The client key
+func (o TalosMachineDisksClientConfigurationOutput) ClientKey() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksClientConfiguration) string { return v.ClientKey }).(pulumi.StringOutput)
+}
+
+type TalosMachineDisksDisk struct {
+	// The bus path of the disk
+	BusPath string `pulumi:"busPath"`
+	// The modalias of the disk
+	Modalias string `pulumi:"modalias"`
+	// The model of the disk
+	Model string `pulumi:"model"`
+	// The name of the disk
+	Name string `pulumi:"name"`
+	// The serial number of the disk
+	Serial string `pulumi:"serial"`
+	// The size of the disk
+	Size string `pulumi:"size"`
+	// The type of the disk
+	Type string `pulumi:"type"`
+	// The uuid of the disk
+	Uuid string `pulumi:"uuid"`
+	// The wwid of the disk
+	Wwid string `pulumi:"wwid"`
+}
+
+// TalosMachineDisksDiskInput is an input type that accepts TalosMachineDisksDiskArgs and TalosMachineDisksDiskOutput values.
+// You can construct a concrete instance of `TalosMachineDisksDiskInput` via:
+//
+//	TalosMachineDisksDiskArgs{...}
+type TalosMachineDisksDiskInput interface {
+	pulumi.Input
+
+	ToTalosMachineDisksDiskOutput() TalosMachineDisksDiskOutput
+	ToTalosMachineDisksDiskOutputWithContext(context.Context) TalosMachineDisksDiskOutput
+}
+
+type TalosMachineDisksDiskArgs struct {
+	// The bus path of the disk
+	BusPath pulumi.StringInput `pulumi:"busPath"`
+	// The modalias of the disk
+	Modalias pulumi.StringInput `pulumi:"modalias"`
+	// The model of the disk
+	Model pulumi.StringInput `pulumi:"model"`
+	// The name of the disk
+	Name pulumi.StringInput `pulumi:"name"`
+	// The serial number of the disk
+	Serial pulumi.StringInput `pulumi:"serial"`
+	// The size of the disk
+	Size pulumi.StringInput `pulumi:"size"`
+	// The type of the disk
+	Type pulumi.StringInput `pulumi:"type"`
+	// The uuid of the disk
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+	// The wwid of the disk
+	Wwid pulumi.StringInput `pulumi:"wwid"`
+}
+
+func (TalosMachineDisksDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineDisksDisk)(nil)).Elem()
+}
+
+func (i TalosMachineDisksDiskArgs) ToTalosMachineDisksDiskOutput() TalosMachineDisksDiskOutput {
+	return i.ToTalosMachineDisksDiskOutputWithContext(context.Background())
+}
+
+func (i TalosMachineDisksDiskArgs) ToTalosMachineDisksDiskOutputWithContext(ctx context.Context) TalosMachineDisksDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineDisksDiskOutput)
+}
+
+// TalosMachineDisksDiskArrayInput is an input type that accepts TalosMachineDisksDiskArray and TalosMachineDisksDiskArrayOutput values.
+// You can construct a concrete instance of `TalosMachineDisksDiskArrayInput` via:
+//
+//	TalosMachineDisksDiskArray{ TalosMachineDisksDiskArgs{...} }
+type TalosMachineDisksDiskArrayInput interface {
+	pulumi.Input
+
+	ToTalosMachineDisksDiskArrayOutput() TalosMachineDisksDiskArrayOutput
+	ToTalosMachineDisksDiskArrayOutputWithContext(context.Context) TalosMachineDisksDiskArrayOutput
+}
+
+type TalosMachineDisksDiskArray []TalosMachineDisksDiskInput
+
+func (TalosMachineDisksDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TalosMachineDisksDisk)(nil)).Elem()
+}
+
+func (i TalosMachineDisksDiskArray) ToTalosMachineDisksDiskArrayOutput() TalosMachineDisksDiskArrayOutput {
+	return i.ToTalosMachineDisksDiskArrayOutputWithContext(context.Background())
+}
+
+func (i TalosMachineDisksDiskArray) ToTalosMachineDisksDiskArrayOutputWithContext(ctx context.Context) TalosMachineDisksDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineDisksDiskArrayOutput)
+}
+
+type TalosMachineDisksDiskOutput struct{ *pulumi.OutputState }
+
+func (TalosMachineDisksDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineDisksDisk)(nil)).Elem()
+}
+
+func (o TalosMachineDisksDiskOutput) ToTalosMachineDisksDiskOutput() TalosMachineDisksDiskOutput {
+	return o
+}
+
+func (o TalosMachineDisksDiskOutput) ToTalosMachineDisksDiskOutputWithContext(ctx context.Context) TalosMachineDisksDiskOutput {
+	return o
+}
+
+// The bus path of the disk
+func (o TalosMachineDisksDiskOutput) BusPath() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksDisk) string { return v.BusPath }).(pulumi.StringOutput)
+}
+
+// The modalias of the disk
+func (o TalosMachineDisksDiskOutput) Modalias() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksDisk) string { return v.Modalias }).(pulumi.StringOutput)
+}
+
+// The model of the disk
+func (o TalosMachineDisksDiskOutput) Model() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksDisk) string { return v.Model }).(pulumi.StringOutput)
+}
+
+// The name of the disk
+func (o TalosMachineDisksDiskOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksDisk) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The serial number of the disk
+func (o TalosMachineDisksDiskOutput) Serial() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksDisk) string { return v.Serial }).(pulumi.StringOutput)
+}
+
+// The size of the disk
+func (o TalosMachineDisksDiskOutput) Size() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksDisk) string { return v.Size }).(pulumi.StringOutput)
+}
+
+// The type of the disk
+func (o TalosMachineDisksDiskOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksDisk) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The uuid of the disk
+func (o TalosMachineDisksDiskOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksDisk) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+// The wwid of the disk
+func (o TalosMachineDisksDiskOutput) Wwid() pulumi.StringOutput {
+	return o.ApplyT(func(v TalosMachineDisksDisk) string { return v.Wwid }).(pulumi.StringOutput)
+}
+
+type TalosMachineDisksDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (TalosMachineDisksDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TalosMachineDisksDisk)(nil)).Elem()
+}
+
+func (o TalosMachineDisksDiskArrayOutput) ToTalosMachineDisksDiskArrayOutput() TalosMachineDisksDiskArrayOutput {
+	return o
+}
+
+func (o TalosMachineDisksDiskArrayOutput) ToTalosMachineDisksDiskArrayOutputWithContext(ctx context.Context) TalosMachineDisksDiskArrayOutput {
+	return o
+}
+
+func (o TalosMachineDisksDiskArrayOutput) Index(i pulumi.IntInput) TalosMachineDisksDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TalosMachineDisksDisk {
+		return vs[0].([]TalosMachineDisksDisk)[vs[1].(int)]
+	}).(TalosMachineDisksDiskOutput)
+}
+
+type TalosMachineDisksFilters struct {
+	// Filter disks by bus path
+	BusPath *string `pulumi:"busPath"`
+	// Filter disks by modalias
+	Modalias *string `pulumi:"modalias"`
+	// Filter disks by model
+	Model *string `pulumi:"model"`
+	// Filter disks by name
+	Name *string `pulumi:"name"`
+	// Filter disks by serial number
+	Serial *string `pulumi:"serial"`
+	// Filter disks by size
+	Size *string `pulumi:"size"`
+	// Filter disks by type
+	Type *string `pulumi:"type"`
+	// Filter disks by uuid
+	Uuid *string `pulumi:"uuid"`
+	// Filter disks by wwid
+	Wwid *string `pulumi:"wwid"`
+}
+
+// TalosMachineDisksFiltersInput is an input type that accepts TalosMachineDisksFiltersArgs and TalosMachineDisksFiltersOutput values.
+// You can construct a concrete instance of `TalosMachineDisksFiltersInput` via:
+//
+//	TalosMachineDisksFiltersArgs{...}
+type TalosMachineDisksFiltersInput interface {
+	pulumi.Input
+
+	ToTalosMachineDisksFiltersOutput() TalosMachineDisksFiltersOutput
+	ToTalosMachineDisksFiltersOutputWithContext(context.Context) TalosMachineDisksFiltersOutput
+}
+
+type TalosMachineDisksFiltersArgs struct {
+	// Filter disks by bus path
+	BusPath pulumi.StringPtrInput `pulumi:"busPath"`
+	// Filter disks by modalias
+	Modalias pulumi.StringPtrInput `pulumi:"modalias"`
+	// Filter disks by model
+	Model pulumi.StringPtrInput `pulumi:"model"`
+	// Filter disks by name
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Filter disks by serial number
+	Serial pulumi.StringPtrInput `pulumi:"serial"`
+	// Filter disks by size
+	Size pulumi.StringPtrInput `pulumi:"size"`
+	// Filter disks by type
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// Filter disks by uuid
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
+	// Filter disks by wwid
+	Wwid pulumi.StringPtrInput `pulumi:"wwid"`
+}
+
+func (TalosMachineDisksFiltersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineDisksFilters)(nil)).Elem()
+}
+
+func (i TalosMachineDisksFiltersArgs) ToTalosMachineDisksFiltersOutput() TalosMachineDisksFiltersOutput {
+	return i.ToTalosMachineDisksFiltersOutputWithContext(context.Background())
+}
+
+func (i TalosMachineDisksFiltersArgs) ToTalosMachineDisksFiltersOutputWithContext(ctx context.Context) TalosMachineDisksFiltersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineDisksFiltersOutput)
+}
+
+func (i TalosMachineDisksFiltersArgs) ToTalosMachineDisksFiltersPtrOutput() TalosMachineDisksFiltersPtrOutput {
+	return i.ToTalosMachineDisksFiltersPtrOutputWithContext(context.Background())
+}
+
+func (i TalosMachineDisksFiltersArgs) ToTalosMachineDisksFiltersPtrOutputWithContext(ctx context.Context) TalosMachineDisksFiltersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineDisksFiltersOutput).ToTalosMachineDisksFiltersPtrOutputWithContext(ctx)
+}
+
+// TalosMachineDisksFiltersPtrInput is an input type that accepts TalosMachineDisksFiltersArgs, TalosMachineDisksFiltersPtr and TalosMachineDisksFiltersPtrOutput values.
+// You can construct a concrete instance of `TalosMachineDisksFiltersPtrInput` via:
+//
+//	        TalosMachineDisksFiltersArgs{...}
+//
+//	or:
+//
+//	        nil
+type TalosMachineDisksFiltersPtrInput interface {
+	pulumi.Input
+
+	ToTalosMachineDisksFiltersPtrOutput() TalosMachineDisksFiltersPtrOutput
+	ToTalosMachineDisksFiltersPtrOutputWithContext(context.Context) TalosMachineDisksFiltersPtrOutput
+}
+
+type talosMachineDisksFiltersPtrType TalosMachineDisksFiltersArgs
+
+func TalosMachineDisksFiltersPtr(v *TalosMachineDisksFiltersArgs) TalosMachineDisksFiltersPtrInput {
+	return (*talosMachineDisksFiltersPtrType)(v)
+}
+
+func (*talosMachineDisksFiltersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TalosMachineDisksFilters)(nil)).Elem()
+}
+
+func (i *talosMachineDisksFiltersPtrType) ToTalosMachineDisksFiltersPtrOutput() TalosMachineDisksFiltersPtrOutput {
+	return i.ToTalosMachineDisksFiltersPtrOutputWithContext(context.Background())
+}
+
+func (i *talosMachineDisksFiltersPtrType) ToTalosMachineDisksFiltersPtrOutputWithContext(ctx context.Context) TalosMachineDisksFiltersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineDisksFiltersPtrOutput)
+}
+
+type TalosMachineDisksFiltersOutput struct{ *pulumi.OutputState }
+
+func (TalosMachineDisksFiltersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineDisksFilters)(nil)).Elem()
+}
+
+func (o TalosMachineDisksFiltersOutput) ToTalosMachineDisksFiltersOutput() TalosMachineDisksFiltersOutput {
+	return o
+}
+
+func (o TalosMachineDisksFiltersOutput) ToTalosMachineDisksFiltersOutputWithContext(ctx context.Context) TalosMachineDisksFiltersOutput {
+	return o
+}
+
+func (o TalosMachineDisksFiltersOutput) ToTalosMachineDisksFiltersPtrOutput() TalosMachineDisksFiltersPtrOutput {
+	return o.ToTalosMachineDisksFiltersPtrOutputWithContext(context.Background())
+}
+
+func (o TalosMachineDisksFiltersOutput) ToTalosMachineDisksFiltersPtrOutputWithContext(ctx context.Context) TalosMachineDisksFiltersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TalosMachineDisksFilters) *TalosMachineDisksFilters {
+		return &v
+	}).(TalosMachineDisksFiltersPtrOutput)
+}
+
+// Filter disks by bus path
+func (o TalosMachineDisksFiltersOutput) BusPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineDisksFilters) *string { return v.BusPath }).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by modalias
+func (o TalosMachineDisksFiltersOutput) Modalias() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineDisksFilters) *string { return v.Modalias }).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by model
+func (o TalosMachineDisksFiltersOutput) Model() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineDisksFilters) *string { return v.Model }).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by name
+func (o TalosMachineDisksFiltersOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineDisksFilters) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by serial number
+func (o TalosMachineDisksFiltersOutput) Serial() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineDisksFilters) *string { return v.Serial }).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by size
+func (o TalosMachineDisksFiltersOutput) Size() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineDisksFilters) *string { return v.Size }).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by type
+func (o TalosMachineDisksFiltersOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineDisksFilters) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by uuid
+func (o TalosMachineDisksFiltersOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineDisksFilters) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by wwid
+func (o TalosMachineDisksFiltersOutput) Wwid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineDisksFilters) *string { return v.Wwid }).(pulumi.StringPtrOutput)
+}
+
+type TalosMachineDisksFiltersPtrOutput struct{ *pulumi.OutputState }
+
+func (TalosMachineDisksFiltersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TalosMachineDisksFilters)(nil)).Elem()
+}
+
+func (o TalosMachineDisksFiltersPtrOutput) ToTalosMachineDisksFiltersPtrOutput() TalosMachineDisksFiltersPtrOutput {
+	return o
+}
+
+func (o TalosMachineDisksFiltersPtrOutput) ToTalosMachineDisksFiltersPtrOutputWithContext(ctx context.Context) TalosMachineDisksFiltersPtrOutput {
+	return o
+}
+
+func (o TalosMachineDisksFiltersPtrOutput) Elem() TalosMachineDisksFiltersOutput {
+	return o.ApplyT(func(v *TalosMachineDisksFilters) TalosMachineDisksFilters {
+		if v != nil {
+			return *v
+		}
+		var ret TalosMachineDisksFilters
+		return ret
+	}).(TalosMachineDisksFiltersOutput)
+}
+
+// Filter disks by bus path
+func (o TalosMachineDisksFiltersPtrOutput) BusPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineDisksFilters) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BusPath
+	}).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by modalias
+func (o TalosMachineDisksFiltersPtrOutput) Modalias() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineDisksFilters) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Modalias
+	}).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by model
+func (o TalosMachineDisksFiltersPtrOutput) Model() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineDisksFilters) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Model
+	}).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by name
+func (o TalosMachineDisksFiltersPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineDisksFilters) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by serial number
+func (o TalosMachineDisksFiltersPtrOutput) Serial() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineDisksFilters) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Serial
+	}).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by size
+func (o TalosMachineDisksFiltersPtrOutput) Size() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineDisksFilters) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Size
+	}).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by type
+func (o TalosMachineDisksFiltersPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineDisksFilters) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by uuid
+func (o TalosMachineDisksFiltersPtrOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineDisksFilters) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Uuid
+	}).(pulumi.StringPtrOutput)
+}
+
+// Filter disks by wwid
+func (o TalosMachineDisksFiltersPtrOutput) Wwid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineDisksFilters) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Wwid
+	}).(pulumi.StringPtrOutput)
+}
+
+type TalosMachineDisksTimeouts struct {
+	Read *string `pulumi:"read"`
+}
+
+// TalosMachineDisksTimeoutsInput is an input type that accepts TalosMachineDisksTimeoutsArgs and TalosMachineDisksTimeoutsOutput values.
+// You can construct a concrete instance of `TalosMachineDisksTimeoutsInput` via:
+//
+//	TalosMachineDisksTimeoutsArgs{...}
+type TalosMachineDisksTimeoutsInput interface {
+	pulumi.Input
+
+	ToTalosMachineDisksTimeoutsOutput() TalosMachineDisksTimeoutsOutput
+	ToTalosMachineDisksTimeoutsOutputWithContext(context.Context) TalosMachineDisksTimeoutsOutput
+}
+
+type TalosMachineDisksTimeoutsArgs struct {
+	Read pulumi.StringPtrInput `pulumi:"read"`
+}
+
+func (TalosMachineDisksTimeoutsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineDisksTimeouts)(nil)).Elem()
+}
+
+func (i TalosMachineDisksTimeoutsArgs) ToTalosMachineDisksTimeoutsOutput() TalosMachineDisksTimeoutsOutput {
+	return i.ToTalosMachineDisksTimeoutsOutputWithContext(context.Background())
+}
+
+func (i TalosMachineDisksTimeoutsArgs) ToTalosMachineDisksTimeoutsOutputWithContext(ctx context.Context) TalosMachineDisksTimeoutsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineDisksTimeoutsOutput)
+}
+
+func (i TalosMachineDisksTimeoutsArgs) ToTalosMachineDisksTimeoutsPtrOutput() TalosMachineDisksTimeoutsPtrOutput {
+	return i.ToTalosMachineDisksTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i TalosMachineDisksTimeoutsArgs) ToTalosMachineDisksTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineDisksTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineDisksTimeoutsOutput).ToTalosMachineDisksTimeoutsPtrOutputWithContext(ctx)
+}
+
+// TalosMachineDisksTimeoutsPtrInput is an input type that accepts TalosMachineDisksTimeoutsArgs, TalosMachineDisksTimeoutsPtr and TalosMachineDisksTimeoutsPtrOutput values.
+// You can construct a concrete instance of `TalosMachineDisksTimeoutsPtrInput` via:
+//
+//	        TalosMachineDisksTimeoutsArgs{...}
+//
+//	or:
+//
+//	        nil
+type TalosMachineDisksTimeoutsPtrInput interface {
+	pulumi.Input
+
+	ToTalosMachineDisksTimeoutsPtrOutput() TalosMachineDisksTimeoutsPtrOutput
+	ToTalosMachineDisksTimeoutsPtrOutputWithContext(context.Context) TalosMachineDisksTimeoutsPtrOutput
+}
+
+type talosMachineDisksTimeoutsPtrType TalosMachineDisksTimeoutsArgs
+
+func TalosMachineDisksTimeoutsPtr(v *TalosMachineDisksTimeoutsArgs) TalosMachineDisksTimeoutsPtrInput {
+	return (*talosMachineDisksTimeoutsPtrType)(v)
+}
+
+func (*talosMachineDisksTimeoutsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TalosMachineDisksTimeouts)(nil)).Elem()
+}
+
+func (i *talosMachineDisksTimeoutsPtrType) ToTalosMachineDisksTimeoutsPtrOutput() TalosMachineDisksTimeoutsPtrOutput {
+	return i.ToTalosMachineDisksTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i *talosMachineDisksTimeoutsPtrType) ToTalosMachineDisksTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineDisksTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TalosMachineDisksTimeoutsPtrOutput)
+}
+
+type TalosMachineDisksTimeoutsOutput struct{ *pulumi.OutputState }
+
+func (TalosMachineDisksTimeoutsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TalosMachineDisksTimeouts)(nil)).Elem()
+}
+
+func (o TalosMachineDisksTimeoutsOutput) ToTalosMachineDisksTimeoutsOutput() TalosMachineDisksTimeoutsOutput {
+	return o
+}
+
+func (o TalosMachineDisksTimeoutsOutput) ToTalosMachineDisksTimeoutsOutputWithContext(ctx context.Context) TalosMachineDisksTimeoutsOutput {
+	return o
+}
+
+func (o TalosMachineDisksTimeoutsOutput) ToTalosMachineDisksTimeoutsPtrOutput() TalosMachineDisksTimeoutsPtrOutput {
+	return o.ToTalosMachineDisksTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (o TalosMachineDisksTimeoutsOutput) ToTalosMachineDisksTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineDisksTimeoutsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TalosMachineDisksTimeouts) *TalosMachineDisksTimeouts {
+		return &v
+	}).(TalosMachineDisksTimeoutsPtrOutput)
+}
+
+func (o TalosMachineDisksTimeoutsOutput) Read() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TalosMachineDisksTimeouts) *string { return v.Read }).(pulumi.StringPtrOutput)
+}
+
+type TalosMachineDisksTimeoutsPtrOutput struct{ *pulumi.OutputState }
+
+func (TalosMachineDisksTimeoutsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TalosMachineDisksTimeouts)(nil)).Elem()
+}
+
+func (o TalosMachineDisksTimeoutsPtrOutput) ToTalosMachineDisksTimeoutsPtrOutput() TalosMachineDisksTimeoutsPtrOutput {
+	return o
+}
+
+func (o TalosMachineDisksTimeoutsPtrOutput) ToTalosMachineDisksTimeoutsPtrOutputWithContext(ctx context.Context) TalosMachineDisksTimeoutsPtrOutput {
+	return o
+}
+
+func (o TalosMachineDisksTimeoutsPtrOutput) Elem() TalosMachineDisksTimeoutsOutput {
+	return o.ApplyT(func(v *TalosMachineDisksTimeouts) TalosMachineDisksTimeouts {
+		if v != nil {
+			return *v
+		}
+		var ret TalosMachineDisksTimeouts
+		return ret
+	}).(TalosMachineDisksTimeoutsOutput)
+}
+
+func (o TalosMachineDisksTimeoutsPtrOutput) Read() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TalosMachineDisksTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Read
+	}).(pulumi.StringPtrOutput)
 }
 
 type TalosMachineSecretsClientConfiguration struct {
@@ -2931,10 +4006,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosClientConfigurationClientConfigurationInput)(nil)).Elem(), TalosClientConfigurationClientConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosClusterKubeconfigClientConfigurationInput)(nil)).Elem(), TalosClusterKubeconfigClientConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosClusterKubeconfigKubernetesClientConfigurationInput)(nil)).Elem(), TalosClusterKubeconfigKubernetesClientConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosClusterKubeconfigTimeoutsInput)(nil)).Elem(), TalosClusterKubeconfigTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosClusterKubeconfigTimeoutsPtrInput)(nil)).Elem(), TalosClusterKubeconfigTimeoutsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineBootstrapClientConfigurationInput)(nil)).Elem(), TalosMachineBootstrapClientConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineBootstrapClientConfigurationPtrInput)(nil)).Elem(), TalosMachineBootstrapClientConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineBootstrapTimeoutsInput)(nil)).Elem(), TalosMachineBootstrapTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineBootstrapTimeoutsPtrInput)(nil)).Elem(), TalosMachineBootstrapTimeoutsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineConfigurationApplyClientConfigurationInput)(nil)).Elem(), TalosMachineConfigurationApplyClientConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineConfigurationApplyClientConfigurationPtrInput)(nil)).Elem(), TalosMachineConfigurationApplyClientConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineConfigurationApplyTimeoutsInput)(nil)).Elem(), TalosMachineConfigurationApplyTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineConfigurationApplyTimeoutsPtrInput)(nil)).Elem(), TalosMachineConfigurationApplyTimeoutsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineConfigurationMachineSecretsInput)(nil)).Elem(), TalosMachineConfigurationMachineSecretsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineConfigurationMachineSecretsCertsInput)(nil)).Elem(), TalosMachineConfigurationMachineSecretsCertsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineConfigurationMachineSecretsCertsEtcdInput)(nil)).Elem(), TalosMachineConfigurationMachineSecretsCertsEtcdArgs{})
@@ -2945,6 +4026,13 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineConfigurationMachineSecretsClusterInput)(nil)).Elem(), TalosMachineConfigurationMachineSecretsClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineConfigurationMachineSecretsSecretsInput)(nil)).Elem(), TalosMachineConfigurationMachineSecretsSecretsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineConfigurationMachineSecretsTrustdinfoInput)(nil)).Elem(), TalosMachineConfigurationMachineSecretsTrustdinfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineDisksClientConfigurationInput)(nil)).Elem(), TalosMachineDisksClientConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineDisksDiskInput)(nil)).Elem(), TalosMachineDisksDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineDisksDiskArrayInput)(nil)).Elem(), TalosMachineDisksDiskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineDisksFiltersInput)(nil)).Elem(), TalosMachineDisksFiltersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineDisksFiltersPtrInput)(nil)).Elem(), TalosMachineDisksFiltersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineDisksTimeoutsInput)(nil)).Elem(), TalosMachineDisksTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineDisksTimeoutsPtrInput)(nil)).Elem(), TalosMachineDisksTimeoutsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineSecretsClientConfigurationInput)(nil)).Elem(), TalosMachineSecretsClientConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineSecretsClientConfigurationPtrInput)(nil)).Elem(), TalosMachineSecretsClientConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TalosMachineSecretsMachineSecretsInput)(nil)).Elem(), TalosMachineSecretsMachineSecretsArgs{})
@@ -2970,10 +4058,16 @@ func init() {
 	pulumi.RegisterOutputType(TalosClientConfigurationClientConfigurationOutput{})
 	pulumi.RegisterOutputType(TalosClusterKubeconfigClientConfigurationOutput{})
 	pulumi.RegisterOutputType(TalosClusterKubeconfigKubernetesClientConfigurationOutput{})
+	pulumi.RegisterOutputType(TalosClusterKubeconfigTimeoutsOutput{})
+	pulumi.RegisterOutputType(TalosClusterKubeconfigTimeoutsPtrOutput{})
 	pulumi.RegisterOutputType(TalosMachineBootstrapClientConfigurationOutput{})
 	pulumi.RegisterOutputType(TalosMachineBootstrapClientConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(TalosMachineBootstrapTimeoutsOutput{})
+	pulumi.RegisterOutputType(TalosMachineBootstrapTimeoutsPtrOutput{})
 	pulumi.RegisterOutputType(TalosMachineConfigurationApplyClientConfigurationOutput{})
 	pulumi.RegisterOutputType(TalosMachineConfigurationApplyClientConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(TalosMachineConfigurationApplyTimeoutsOutput{})
+	pulumi.RegisterOutputType(TalosMachineConfigurationApplyTimeoutsPtrOutput{})
 	pulumi.RegisterOutputType(TalosMachineConfigurationMachineSecretsOutput{})
 	pulumi.RegisterOutputType(TalosMachineConfigurationMachineSecretsCertsOutput{})
 	pulumi.RegisterOutputType(TalosMachineConfigurationMachineSecretsCertsEtcdOutput{})
@@ -2984,6 +4078,13 @@ func init() {
 	pulumi.RegisterOutputType(TalosMachineConfigurationMachineSecretsClusterOutput{})
 	pulumi.RegisterOutputType(TalosMachineConfigurationMachineSecretsSecretsOutput{})
 	pulumi.RegisterOutputType(TalosMachineConfigurationMachineSecretsTrustdinfoOutput{})
+	pulumi.RegisterOutputType(TalosMachineDisksClientConfigurationOutput{})
+	pulumi.RegisterOutputType(TalosMachineDisksDiskOutput{})
+	pulumi.RegisterOutputType(TalosMachineDisksDiskArrayOutput{})
+	pulumi.RegisterOutputType(TalosMachineDisksFiltersOutput{})
+	pulumi.RegisterOutputType(TalosMachineDisksFiltersPtrOutput{})
+	pulumi.RegisterOutputType(TalosMachineDisksTimeoutsOutput{})
+	pulumi.RegisterOutputType(TalosMachineDisksTimeoutsPtrOutput{})
 	pulumi.RegisterOutputType(TalosMachineSecretsClientConfigurationOutput{})
 	pulumi.RegisterOutputType(TalosMachineSecretsClientConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(TalosMachineSecretsMachineSecretsOutput{})

@@ -10,6 +10,8 @@ import (
 	"path/filepath"
 	"unicode"
 
+	_ "embed"
+
 	pf "github.com/pulumi/pulumi-terraform-bridge/pf/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
@@ -23,6 +25,9 @@ const (
 	talosPkg = "talos"
 	talosMod = "index"
 )
+
+//go:embed cmd/pulumi-resource-talos/bridge-metadata.json
+var bridgeMetadata []byte
 
 // talosMember manufactures a type token for the random package and the given module and type.
 func talosMember(mod string, mem string) tokens.ModuleMember {
@@ -62,8 +67,28 @@ func Provider() pf.ProviderInfo {
 		Publisher:         "Sidero Labs",
 		LogoURL:           "https://www.talos.dev/images/Sidero_stacked_darkbkgd_RGB.svg",
 		PluginDownloadURL: "https://github.com/siderolabs/pulumi-provider-talos/releases",
+		// ExtraTypes: map[string]schema.ComplexTypeSpec{
+		// 	"talos:ClientConfiguration:ClientConfiguration": {
+		// 		ObjectTypeSpec: schema.ObjectTypeSpec{
+		// 			Type: "object",
+		// 			Properties: map[string]schema.PropertySpec{
+		// 				"ca_certificate": {
+		// 					TypeSpec: schema.TypeSpec{
+		// 						Type: "string",
+		// 					},
+		// 				},
+		// 			},
+		// 		},
+		// 	},
+		// },
 		Resources: map[string]*tfbridge.ResourceInfo{
-			"talos_machine_bootstrap":           {Tok: talosResource(talosMod, "TalosMachineBootstrap")},
+			"talos_machine_bootstrap": {Tok: talosResource(talosMod, "TalosMachineBootstrap")}, // Fields: map[string]*tfbridge.SchemaInfo{
+			// 	"client_configuration": {
+			// 		// Name: "clientConfiguration",
+			// 		Type: tokens.NewTypeToken("talos", "ClientConfiguration"),
+			// 	},
+			// },
+
 			"talos_machine_configuration_apply": {Tok: talosResource(talosMod, "TalosMachineConfigurationApply")},
 			"talos_machine_secrets":             {Tok: talosResource(talosMod, "TalosMachineSecrets")},
 		},
@@ -71,6 +96,7 @@ func Provider() pf.ProviderInfo {
 			"talos_client_configuration":  {Tok: talosDataResource(talosMod, "TalosClientConfiguration")},
 			"talos_cluster_kubeconfig":    {Tok: talosDataResource(talosMod, "TalosClusterKubeconfig")},
 			"talos_machine_configuration": {Tok: talosDataResource(talosMod, "TalosMachineConfiguration")},
+			"talos_machine_disks":         {Tok: talosDataResource(talosMod, "TalosMachineDisks")},
 		},
 		Golang: &tfbridge.GolangInfo{
 			ImportBasePath: filepath.Join(
@@ -81,6 +107,7 @@ func Provider() pf.ProviderInfo {
 			),
 			GenerateResourceContainerTypes: true,
 		},
+		MetadataInfo: tfbridge.NewProviderMetadata(bridgeMetadata),
 	}
 
 	return pf.ProviderInfo{

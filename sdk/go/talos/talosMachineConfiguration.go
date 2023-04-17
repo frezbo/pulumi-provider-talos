@@ -12,12 +12,7 @@ import (
 
 // Generate a machine configuration for a node type
 //
-// > **Note:** It is recommended to set the optional `talosVersion` attribute.
-// Otherwise when using a new version of the provider with a new major version of the Talos SDK, new machineconfig features will be enabled by default which could cause unexpected behavior.
-//
-// ## Example Usage
-//
-// {{tffile "examples/data-sources/talos_machine_configuration/data-source.tf"}}
+// > **Note:** It is recommended to set the optional `talosVersion` attribute. Otherwise when using a new version of the provider with a new major version of the Talos SDK, new machineconfig features will be enabled by default which could cause unexpected behavior.
 func TalosMachineConfiguration(ctx *pulumi.Context, args *TalosMachineConfigurationArgs, opts ...pulumi.InvokeOption) (*TalosMachineConfigurationResult, error) {
 	opts = pkgInvokeDefaultOpts(opts)
 	var rv TalosMachineConfigurationResult

@@ -30,8 +30,8 @@ type TalosMachineBootstrap struct {
 	// The endpoint of the machine to bootstrap
 	Endpoint pulumi.StringOutput `pulumi:"endpoint"`
 	// The name of the node to bootstrap
-	Node     pulumi.StringOutput `pulumi:"node"`
-	Timeouts pulumi.MapOutput    `pulumi:"timeouts"`
+	Node     pulumi.StringOutput                    `pulumi:"node"`
+	Timeouts TalosMachineBootstrapTimeoutsPtrOutput `pulumi:"timeouts"`
 }
 
 // NewTalosMachineBootstrap registers a new resource with the given unique name, arguments, and options.
@@ -75,8 +75,8 @@ type talosMachineBootstrapState struct {
 	// The endpoint of the machine to bootstrap
 	Endpoint *string `pulumi:"endpoint"`
 	// The name of the node to bootstrap
-	Node     *string                `pulumi:"node"`
-	Timeouts map[string]interface{} `pulumi:"timeouts"`
+	Node     *string                        `pulumi:"node"`
+	Timeouts *TalosMachineBootstrapTimeouts `pulumi:"timeouts"`
 }
 
 type TalosMachineBootstrapState struct {
@@ -86,7 +86,7 @@ type TalosMachineBootstrapState struct {
 	Endpoint pulumi.StringPtrInput
 	// The name of the node to bootstrap
 	Node     pulumi.StringPtrInput
-	Timeouts pulumi.MapInput
+	Timeouts TalosMachineBootstrapTimeoutsPtrInput
 }
 
 func (TalosMachineBootstrapState) ElementType() reflect.Type {
@@ -99,8 +99,8 @@ type talosMachineBootstrapArgs struct {
 	// The endpoint of the machine to bootstrap
 	Endpoint *string `pulumi:"endpoint"`
 	// The name of the node to bootstrap
-	Node     string                 `pulumi:"node"`
-	Timeouts map[string]interface{} `pulumi:"timeouts"`
+	Node     string                         `pulumi:"node"`
+	Timeouts *TalosMachineBootstrapTimeouts `pulumi:"timeouts"`
 }
 
 // The set of arguments for constructing a TalosMachineBootstrap resource.
@@ -111,7 +111,7 @@ type TalosMachineBootstrapArgs struct {
 	Endpoint pulumi.StringPtrInput
 	// The name of the node to bootstrap
 	Node     pulumi.StringInput
-	Timeouts pulumi.MapInput
+	Timeouts TalosMachineBootstrapTimeoutsPtrInput
 }
 
 func (TalosMachineBootstrapArgs) ElementType() reflect.Type {
@@ -218,8 +218,8 @@ func (o TalosMachineBootstrapOutput) Node() pulumi.StringOutput {
 	return o.ApplyT(func(v *TalosMachineBootstrap) pulumi.StringOutput { return v.Node }).(pulumi.StringOutput)
 }
 
-func (o TalosMachineBootstrapOutput) Timeouts() pulumi.MapOutput {
-	return o.ApplyT(func(v *TalosMachineBootstrap) pulumi.MapOutput { return v.Timeouts }).(pulumi.MapOutput)
+func (o TalosMachineBootstrapOutput) Timeouts() TalosMachineBootstrapTimeoutsPtrOutput {
+	return o.ApplyT(func(v *TalosMachineBootstrap) TalosMachineBootstrapTimeoutsPtrOutput { return v.Timeouts }).(TalosMachineBootstrapTimeoutsPtrOutput)
 }
 
 type TalosMachineBootstrapArrayOutput struct{ *pulumi.OutputState }

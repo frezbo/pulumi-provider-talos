@@ -112,6 +112,14 @@
                 }
             }
         },
+        "talos:index/TalosClusterKubeconfigTimeouts:TalosClusterKubeconfigTimeouts": {
+            "properties": {
+                "read": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
         "talos:index/TalosMachineBootstrapClientConfiguration:TalosMachineBootstrapClientConfiguration": {
             "properties": {
                 "caCertificate": {
@@ -135,6 +143,14 @@
                 "clientKey"
             ]
         },
+        "talos:index/TalosMachineBootstrapTimeouts:TalosMachineBootstrapTimeouts": {
+            "properties": {
+                "create": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
         "talos:index/TalosMachineConfigurationApplyClientConfiguration:TalosMachineConfigurationApplyClientConfiguration": {
             "properties": {
                 "caCertificate": {
@@ -157,6 +173,17 @@
                 "clientCertificate",
                 "clientKey"
             ]
+        },
+        "talos:index/TalosMachineConfigurationApplyTimeouts:TalosMachineConfigurationApplyTimeouts": {
+            "properties": {
+                "create": {
+                    "type": "string"
+                },
+                "update": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
         },
         "talos:index/TalosMachineConfigurationMachineSecrets:TalosMachineConfigurationMachineSecrets": {
             "properties": {
@@ -337,6 +364,135 @@
             "required": [
                 "token"
             ]
+        },
+        "talos:index/TalosMachineDisksClientConfiguration:TalosMachineDisksClientConfiguration": {
+            "properties": {
+                "caCertificate": {
+                    "type": "string",
+                    "description": "The client CA certificate\n"
+                },
+                "clientCertificate": {
+                    "type": "string",
+                    "description": "The client certificate\n"
+                },
+                "clientKey": {
+                    "type": "string",
+                    "description": "The client key\n",
+                    "secret": true
+                }
+            },
+            "type": "object",
+            "required": [
+                "caCertificate",
+                "clientCertificate",
+                "clientKey"
+            ]
+        },
+        "talos:index/TalosMachineDisksDisk:TalosMachineDisksDisk": {
+            "properties": {
+                "busPath": {
+                    "type": "string",
+                    "description": "The bus path of the disk\n"
+                },
+                "modalias": {
+                    "type": "string",
+                    "description": "The modalias of the disk\n"
+                },
+                "model": {
+                    "type": "string",
+                    "description": "The model of the disk\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the disk\n"
+                },
+                "serial": {
+                    "type": "string",
+                    "description": "The serial number of the disk\n"
+                },
+                "size": {
+                    "type": "string",
+                    "description": "The size of the disk\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The type of the disk\n"
+                },
+                "uuid": {
+                    "type": "string",
+                    "description": "The uuid of the disk\n"
+                },
+                "wwid": {
+                    "type": "string",
+                    "description": "The wwid of the disk\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "busPath",
+                "modalias",
+                "model",
+                "name",
+                "serial",
+                "size",
+                "type",
+                "uuid",
+                "wwid"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "talos:index/TalosMachineDisksFilters:TalosMachineDisksFilters": {
+            "properties": {
+                "busPath": {
+                    "type": "string",
+                    "description": "Filter disks by bus path\n"
+                },
+                "modalias": {
+                    "type": "string",
+                    "description": "Filter disks by modalias\n"
+                },
+                "model": {
+                    "type": "string",
+                    "description": "Filter disks by model\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Filter disks by name\n"
+                },
+                "serial": {
+                    "type": "string",
+                    "description": "Filter disks by serial number\n"
+                },
+                "size": {
+                    "type": "string",
+                    "description": "Filter disks by size\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Filter disks by type\n"
+                },
+                "uuid": {
+                    "type": "string",
+                    "description": "Filter disks by uuid\n"
+                },
+                "wwid": {
+                    "type": "string",
+                    "description": "Filter disks by wwid\n"
+                }
+            },
+            "type": "object"
+        },
+        "talos:index/TalosMachineDisksTimeouts:TalosMachineDisksTimeouts": {
+            "properties": {
+                "read": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
         },
         "talos:index/TalosMachineSecretsClientConfiguration:TalosMachineSecretsClientConfiguration": {
             "properties": {
@@ -606,10 +762,7 @@
                     "description": "The name of the node to bootstrap\n"
                 },
                 "timeouts": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "pulumi.json#/Any"
-                    }
+                    "$ref": "#/types/talos:index/TalosMachineBootstrapTimeouts:TalosMachineBootstrapTimeouts"
                 }
             },
             "required": [
@@ -631,10 +784,7 @@
                     "description": "The name of the node to bootstrap\n"
                 },
                 "timeouts": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "pulumi.json#/Any"
-                    }
+                    "$ref": "#/types/talos:index/TalosMachineBootstrapTimeouts:TalosMachineBootstrapTimeouts"
                 }
             },
             "requiredInputs": [
@@ -657,17 +807,14 @@
                         "description": "The name of the node to bootstrap\n"
                     },
                     "timeouts": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "$ref": "pulumi.json#/Any"
-                        }
+                        "$ref": "#/types/talos:index/TalosMachineBootstrapTimeouts:TalosMachineBootstrapTimeouts"
                     }
                 },
                 "type": "object"
             }
         },
         "talos:index/talosMachineConfigurationApply:TalosMachineConfigurationApply": {
-            "description": "The machine bootstrap resource allows you to bootstrap a Talos node.\n",
+            "description": "The machine configuration apply resource allows to apply machine configuration to a node\n",
             "properties": {
                 "applyMode": {
                     "type": "string",
@@ -703,10 +850,7 @@
                     "description": "The name of the node to bootstrap\n"
                 },
                 "timeouts": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "pulumi.json#/Any"
-                    }
+                    "$ref": "#/types/talos:index/TalosMachineConfigurationApplyTimeouts:TalosMachineConfigurationApplyTimeouts"
                 }
             },
             "required": [
@@ -747,10 +891,7 @@
                     "description": "The name of the node to bootstrap\n"
                 },
                 "timeouts": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "$ref": "pulumi.json#/Any"
-                    }
+                    "$ref": "#/types/talos:index/TalosMachineConfigurationApplyTimeouts:TalosMachineConfigurationApplyTimeouts"
                 }
             },
             "requiredInputs": [
@@ -795,10 +936,7 @@
                         "description": "The name of the node to bootstrap\n"
                     },
                     "timeouts": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "$ref": "pulumi.json#/Any"
-                        }
+                        "$ref": "#/types/talos:index/TalosMachineConfigurationApplyTimeouts:TalosMachineConfigurationApplyTimeouts"
                     }
                 },
                 "type": "object"
@@ -948,10 +1086,7 @@
                         "description": "controlplane node to retrieve the kubeconfig from\n"
                     },
                     "timeouts": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "$ref": "pulumi.json#/Any"
-                        }
+                        "$ref": "#/types/talos:index/TalosClusterKubeconfigTimeouts:TalosClusterKubeconfigTimeouts"
                     },
                     "wait": {
                         "type": "boolean",
@@ -993,10 +1128,7 @@
                         "description": "controlplane node to retrieve the kubeconfig from\n"
                     },
                     "timeouts": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "$ref": "pulumi.json#/Any"
-                        }
+                        "$ref": "#/types/talos:index/TalosClusterKubeconfigTimeouts:TalosClusterKubeconfigTimeouts"
                     },
                     "wait": {
                         "type": "boolean",
@@ -1015,7 +1147,7 @@
             }
         },
         "talos:index/talosMachineConfiguration:TalosMachineConfiguration": {
-            "description": "Generate a machine configuration for a node type\n\n\u003e **Note:** It is recommended to set the optional `talos_version` attribute.\n\u003e Otherwise when using a new version of the provider with a new major version of the Talos SDK, new machineconfig features will be enabled by default which could cause unexpected behavior.\n\n{{% examples %}}\n## Example Usage\n\n{{tffile \"examples/data-sources/talos_machine_configuration/data-source.tf\"}}\n{{% /examples %}}",
+            "description": "Generate a machine configuration for a node type\n\n\u003e **Note:** It is recommended to set the optional `talos_version` attribute. Otherwise when using a new version of the provider with a new major version of the Talos SDK, new machineconfig features will be enabled by default which could cause unexpected behavior.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.talos.TalosMachineSecrets;\nimport com.pulumi.talos.TalosFunctions;\nimport com.pulumi.talos.inputs.TalosMachineConfigurationArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var thisTalosMachineSecrets = new TalosMachineSecrets(\"thisTalosMachineSecrets\");\n\n        final var thisTalosMachineConfiguration = TalosFunctions.TalosMachineConfiguration(TalosMachineConfigurationArgs.builder()\n            .clusterName(\"example-cluster\")\n            .type(\"controlplane\")\n            .clusterEndpoint(\"https://cluster.local:6443\")\n            .machineSecrets(thisTalosMachineSecrets.machineSecrets())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  thisTalosMachineSecrets:\n    type: talos:TalosMachineSecrets\nvariables:\n  thisTalosMachineConfiguration:\n    fn::invoke:\n      Function: talos:TalosMachineConfiguration\n      Arguments:\n        clusterName: example-cluster\n        type: controlplane\n        clusterEndpoint: https://cluster.local:6443\n        machineSecrets: ${thisTalosMachineSecrets.machineSecrets}\n```\n{{% /example %}}\n{{% /examples %}}",
             "inputs": {
                 "description": "A collection of arguments for invoking TalosMachineConfiguration.\n",
                 "properties": {
@@ -1127,6 +1259,81 @@
                     "machineConfiguration",
                     "machineSecrets",
                     "machineType"
+                ]
+            }
+        },
+        "talos:index/talosMachineDisks:TalosMachineDisks": {
+            "description": "Generate a machine configuration for a node type\n\n\u003e **Note:** Since Talos natively supports `.machine.install.diskSelector`, the `talos.TalosMachineDisks` data source maybe just used to query disk information that could be used elsewhere. It's recommended to use `machine.install.diskSelector` in Talos machine configuration.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as talos from \"@pulumi/talos\";\n\nconst thisTalosMachineSecrets = new talos.TalosMachineSecrets(\"thisTalosMachineSecrets\", {});\nconst thisTalosMachineDisks = talos.TalosMachineDisksOutput({\n    clientConfiguration: thisTalosMachineSecrets.clientConfiguration,\n    node: \"10.5.0.2\",\n    filters: {\n        size: \"\u003e 100GB\",\n        type: \"nvme\",\n    },\n});\nexport const nvmeDisks = [thisTalosMachineDisks.apply(thisTalosMachineDisks =\u003e thisTalosMachineDisks.disks)].map(__item =\u003e __item?.name);\n```\n```python\nimport pulumi\nimport pulumi_talos as talos\n\nthis_talos_machine_secrets = talos.TalosMachineSecrets(\"thisTalosMachineSecrets\")\nthis_talos_machine_disks = talos.talos_machine_disks_output(client_configuration=this_talos_machine_secrets.client_configuration,\n    node=\"10.5.0.2\",\n    filters=talos.TalosMachineDisksFiltersArgs(\n        size=\"\u003e 100GB\",\n        type=\"nvme\",\n    ))\npulumi.export(\"nvmeDisks\", [__item.name for __item in [this_talos_machine_disks.disks]])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Talos = Pulumi.Talos;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var thisTalosMachineSecrets = new Talos.TalosMachineSecrets(\"thisTalosMachineSecrets\");\n\n    var thisTalosMachineDisks = Talos.TalosMachineDisks.Invoke(new()\n    {\n        ClientConfiguration = thisTalosMachineSecrets.ClientConfiguration,\n        Node = \"10.5.0.2\",\n        Filters = new Talos.Inputs.TalosMachineDisksFiltersInputArgs\n        {\n            Size = \"\u003e 100GB\",\n            Type = \"nvme\",\n        },\n    });\n\n    return new Dictionary\u003cstring, object?\u003e\n    {\n        [\"nvmeDisks\"] = new[]\n        {\n            thisTalosMachineDisks.Apply(talosMachineDisksResult =\u003e talosMachineDisksResult.Disks),\n        }.Select(__item =\u003e __item?.Name).ToList(),\n    };\n});\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.talos.TalosMachineSecrets;\nimport com.pulumi.talos.TalosFunctions;\nimport com.pulumi.talos.inputs.TalosMachineDisksArgs;\nimport com.pulumi.talos.inputs.TalosMachineDisksFiltersArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var thisTalosMachineSecrets = new TalosMachineSecrets(\"thisTalosMachineSecrets\");\n\n        final var thisTalosMachineDisks = TalosFunctions.TalosMachineDisks(TalosMachineDisksArgs.builder()\n            .clientConfiguration(thisTalosMachineSecrets.clientConfiguration())\n            .node(\"10.5.0.2\")\n            .filters(TalosMachineDisksFiltersArgs.builder()\n                .size(\"\u003e 100GB\")\n                .type(\"nvme\")\n                .build())\n            .build());\n\n        ctx.export(\"nvmeDisks\", thisTalosMachineDisks.applyValue(talosMachineDisksResult -\u003e talosMachineDisksResult).applyValue(thisTalosMachineDisks -\u003e thisTalosMachineDisks.applyValue(talosMachineDisksResult -\u003e talosMachineDisksResult.disks())).stream().map(element -\u003e element.name()).collect(toList()));\n    }\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "inputs": {
+                "description": "A collection of arguments for invoking TalosMachineDisks.\n",
+                "properties": {
+                    "clientConfiguration": {
+                        "$ref": "#/types/talos:index/TalosMachineDisksClientConfiguration:TalosMachineDisksClientConfiguration",
+                        "description": "The client configuration data\n"
+                    },
+                    "endpoint": {
+                        "type": "string",
+                        "description": "endpoint to use for the talosclient. if not set, the node value will be used\n"
+                    },
+                    "filters": {
+                        "$ref": "#/types/talos:index/TalosMachineDisksFilters:TalosMachineDisksFilters",
+                        "description": "Filters to apply to the disks\n"
+                    },
+                    "node": {
+                        "type": "string",
+                        "description": "controlplane node to retrieve the kubeconfig from\n"
+                    },
+                    "timeouts": {
+                        "$ref": "#/types/talos:index/TalosMachineDisksTimeouts:TalosMachineDisksTimeouts"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "clientConfiguration",
+                    "node"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by TalosMachineDisks.\n",
+                "properties": {
+                    "clientConfiguration": {
+                        "$ref": "#/types/talos:index/TalosMachineDisksClientConfiguration:TalosMachineDisksClientConfiguration",
+                        "description": "The client configuration data\n"
+                    },
+                    "disks": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/talos:index/TalosMachineDisksDisk:TalosMachineDisksDisk"
+                        },
+                        "description": "The disks that match the filters\n"
+                    },
+                    "endpoint": {
+                        "type": "string",
+                        "description": "endpoint to use for the talosclient. if not set, the node value will be used\n"
+                    },
+                    "filters": {
+                        "$ref": "#/types/talos:index/TalosMachineDisksFilters:TalosMachineDisksFilters",
+                        "description": "Filters to apply to the disks\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The generated ID of this resource\n"
+                    },
+                    "node": {
+                        "type": "string",
+                        "description": "controlplane node to retrieve the kubeconfig from\n"
+                    },
+                    "timeouts": {
+                        "$ref": "#/types/talos:index/TalosMachineDisksTimeouts:TalosMachineDisksTimeouts"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "clientConfiguration",
+                    "disks",
+                    "endpoint",
+                    "id",
+                    "node"
                 ]
             }
         }

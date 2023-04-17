@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The machine bootstrap resource allows you to bootstrap a Talos node.
+// The machine configuration apply resource allows to apply machine configuration to a node
 type TalosMachineConfigurationApply struct {
 	pulumi.CustomResourceState
 
@@ -28,8 +28,8 @@ type TalosMachineConfigurationApply struct {
 	// The machine configuration to apply
 	MachineConfigurationInput pulumi.StringOutput `pulumi:"machineConfigurationInput"`
 	// The name of the node to bootstrap
-	Node     pulumi.StringOutput `pulumi:"node"`
-	Timeouts pulumi.MapOutput    `pulumi:"timeouts"`
+	Node     pulumi.StringOutput                             `pulumi:"node"`
+	Timeouts TalosMachineConfigurationApplyTimeoutsPtrOutput `pulumi:"timeouts"`
 }
 
 // NewTalosMachineConfigurationApply registers a new resource with the given unique name, arguments, and options.
@@ -92,8 +92,8 @@ type talosMachineConfigurationApplyState struct {
 	// The machine configuration to apply
 	MachineConfigurationInput *string `pulumi:"machineConfigurationInput"`
 	// The name of the node to bootstrap
-	Node     *string                `pulumi:"node"`
-	Timeouts map[string]interface{} `pulumi:"timeouts"`
+	Node     *string                                 `pulumi:"node"`
+	Timeouts *TalosMachineConfigurationApplyTimeouts `pulumi:"timeouts"`
 }
 
 type TalosMachineConfigurationApplyState struct {
@@ -111,7 +111,7 @@ type TalosMachineConfigurationApplyState struct {
 	MachineConfigurationInput pulumi.StringPtrInput
 	// The name of the node to bootstrap
 	Node     pulumi.StringPtrInput
-	Timeouts pulumi.MapInput
+	Timeouts TalosMachineConfigurationApplyTimeoutsPtrInput
 }
 
 func (TalosMachineConfigurationApplyState) ElementType() reflect.Type {
@@ -130,8 +130,8 @@ type talosMachineConfigurationApplyArgs struct {
 	// The machine configuration to apply
 	MachineConfigurationInput string `pulumi:"machineConfigurationInput"`
 	// The name of the node to bootstrap
-	Node     string                 `pulumi:"node"`
-	Timeouts map[string]interface{} `pulumi:"timeouts"`
+	Node     string                                  `pulumi:"node"`
+	Timeouts *TalosMachineConfigurationApplyTimeouts `pulumi:"timeouts"`
 }
 
 // The set of arguments for constructing a TalosMachineConfigurationApply resource.
@@ -148,7 +148,7 @@ type TalosMachineConfigurationApplyArgs struct {
 	MachineConfigurationInput pulumi.StringInput
 	// The name of the node to bootstrap
 	Node     pulumi.StringInput
-	Timeouts pulumi.MapInput
+	Timeouts TalosMachineConfigurationApplyTimeoutsPtrInput
 }
 
 func (TalosMachineConfigurationApplyArgs) ElementType() reflect.Type {
@@ -275,8 +275,10 @@ func (o TalosMachineConfigurationApplyOutput) Node() pulumi.StringOutput {
 	return o.ApplyT(func(v *TalosMachineConfigurationApply) pulumi.StringOutput { return v.Node }).(pulumi.StringOutput)
 }
 
-func (o TalosMachineConfigurationApplyOutput) Timeouts() pulumi.MapOutput {
-	return o.ApplyT(func(v *TalosMachineConfigurationApply) pulumi.MapOutput { return v.Timeouts }).(pulumi.MapOutput)
+func (o TalosMachineConfigurationApplyOutput) Timeouts() TalosMachineConfigurationApplyTimeoutsPtrOutput {
+	return o.ApplyT(func(v *TalosMachineConfigurationApply) TalosMachineConfigurationApplyTimeoutsPtrOutput {
+		return v.Timeouts
+	}).(TalosMachineConfigurationApplyTimeoutsPtrOutput)
 }
 
 type TalosMachineConfigurationApplyArrayOutput struct{ *pulumi.OutputState }

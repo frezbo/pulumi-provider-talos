@@ -28,8 +28,8 @@ type TalosClusterKubeconfigArgs struct {
 	// endpoint to use for the talosclient. if not set, the node value will be used
 	Endpoint *string `pulumi:"endpoint"`
 	// controlplane node to retrieve the kubeconfig from
-	Node     string                 `pulumi:"node"`
-	Timeouts map[string]interface{} `pulumi:"timeouts"`
+	Node     string                          `pulumi:"node"`
+	Timeouts *TalosClusterKubeconfigTimeouts `pulumi:"timeouts"`
 	// Wait for the kubernetes api to be available
 	Wait *bool `pulumi:"wait"`
 }
@@ -47,8 +47,8 @@ type TalosClusterKubeconfigResult struct {
 	// The kubernetes client configuration
 	KubernetesClientConfiguration TalosClusterKubeconfigKubernetesClientConfiguration `pulumi:"kubernetesClientConfiguration"`
 	// controlplane node to retrieve the kubeconfig from
-	Node     string                 `pulumi:"node"`
-	Timeouts map[string]interface{} `pulumi:"timeouts"`
+	Node     string                          `pulumi:"node"`
+	Timeouts *TalosClusterKubeconfigTimeouts `pulumi:"timeouts"`
 	// Wait for the kubernetes api to be available
 	Wait *bool `pulumi:"wait"`
 }
@@ -73,8 +73,8 @@ type TalosClusterKubeconfigOutputArgs struct {
 	// endpoint to use for the talosclient. if not set, the node value will be used
 	Endpoint pulumi.StringPtrInput `pulumi:"endpoint"`
 	// controlplane node to retrieve the kubeconfig from
-	Node     pulumi.StringInput `pulumi:"node"`
-	Timeouts pulumi.MapInput    `pulumi:"timeouts"`
+	Node     pulumi.StringInput                     `pulumi:"node"`
+	Timeouts TalosClusterKubeconfigTimeoutsPtrInput `pulumi:"timeouts"`
 	// Wait for the kubernetes api to be available
 	Wait pulumi.BoolPtrInput `pulumi:"wait"`
 }
@@ -132,8 +132,8 @@ func (o TalosClusterKubeconfigResultOutput) Node() pulumi.StringOutput {
 	return o.ApplyT(func(v TalosClusterKubeconfigResult) string { return v.Node }).(pulumi.StringOutput)
 }
 
-func (o TalosClusterKubeconfigResultOutput) Timeouts() pulumi.MapOutput {
-	return o.ApplyT(func(v TalosClusterKubeconfigResult) map[string]interface{} { return v.Timeouts }).(pulumi.MapOutput)
+func (o TalosClusterKubeconfigResultOutput) Timeouts() TalosClusterKubeconfigTimeoutsPtrOutput {
+	return o.ApplyT(func(v TalosClusterKubeconfigResult) *TalosClusterKubeconfigTimeouts { return v.Timeouts }).(TalosClusterKubeconfigTimeoutsPtrOutput)
 }
 
 // Wait for the kubernetes api to be available
